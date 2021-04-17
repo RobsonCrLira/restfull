@@ -1,12 +1,18 @@
-package com.dio.restfull.dto;
+package com.dio.restfull.entity;
 
-import com.dio.restfull.enums.Raca;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Soldado {
+@Entity
+public class SoldadoEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String cpf;
     private String nome;
-    private Raca raca;
+    private String raca;
     private String arma;
     private String status;
 
@@ -34,11 +40,11 @@ public class Soldado {
         this.nome = nome;
     }
 
-    public Raca getRaca() {
+    public String getRaca() {
         return raca;
     }
 
-    public void setRaca(Raca raca) {
+    public void setRaca(String raca) {
         this.raca = raca;
     }
 

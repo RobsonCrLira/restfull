@@ -1,19 +1,21 @@
-package com.dio.restfull.dto;
+package com.dio.restfull.controller.response;
 
-import com.dio.restfull.enums.Raca;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.hateoas.RepresentationModel;
 
-public class Soldado {
+public class SoldadoResponse extends RepresentationModel {
     private Long id;
     private String cpf;
     private String nome;
-    private Raca raca;
+    private String raca;
     private String arma;
-    private String status;
 
-    public Long getId() {
+    @JsonProperty("id")
+    public Long getResourseId() {
         return id;
     }
 
+    @JsonProperty("id")
     public void setId(Long id) {
         this.id = id;
     }
@@ -34,11 +36,11 @@ public class Soldado {
         this.nome = nome;
     }
 
-    public Raca getRaca() {
+    public String getRaca() {
         return raca;
     }
 
-    public void setRaca(Raca raca) {
+    public void setRaca(String raca) {
         this.raca = raca;
     }
 
@@ -48,13 +50,5 @@ public class Soldado {
 
     public void setArma(String arma) {
         this.arma = arma;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }
